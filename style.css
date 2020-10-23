@@ -55,7 +55,7 @@ a {
   justify-content: center;
   align-items: center;
   display: flex;
-  font-size: 70vh;
+  font-size: 60vh;
 }
 
 .lower {
@@ -92,7 +92,7 @@ a {
   border: solid white;
   border-width: 0 5px 5px 0;
   display: inline-block;
-  padding: 15px;
+  padding: 30px;
 }
 
 .right {

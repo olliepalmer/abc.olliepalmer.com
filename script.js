@@ -27,7 +27,7 @@ function change(v) {
   document.getElementById("letters").innerHTML =
     "<a onclick='bigorsmall();play(" + pos + ")'>" + letter[pos] + "</a>";
   color();
-  play(pos);
+  // play(pos);
 }
 function color() {
   var newColor = randomColor({ luminosity: "dark" });
@@ -72,6 +72,8 @@ function init() {
     i++;
     if (i >= audiofiles.length) return;
   };
+  player.play(pos);
+  color();
 }
 
 // we start preloading all the audio files
