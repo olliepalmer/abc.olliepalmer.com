@@ -27,7 +27,7 @@ function change(v) {
   document.getElementById("letters").innerHTML =
     "<a onclick='bigorsmall();play(" + pos + ")'>" + letter[pos] + "</a>";
   color();
-  // play(pos);
+  play(pos);
 }
 function color() {
   var newColor = randomColor({ luminosity: "dark" });
