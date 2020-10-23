@@ -51,7 +51,7 @@ function loadedAudio() {
   // this will be called every time an audio file is loaded
   // we keep track of the loaded files vs the requested files
   loaded++;
-  if (loaded == audioFiles.length) {
+  if (loaded == audiofiles.length) {
     // all have loaded
     init();
   }
@@ -59,7 +59,7 @@ function loadedAudio() {
 
 var player = document.getElementById("player");
 function play(index) {
-  player.src = audioFiles[index];
+  player.src = audiofiles[index];
   player.play();
 }
 
@@ -69,13 +69,13 @@ function init() {
   var i = 0;
   player.onended = function () {
     i++;
-    if (i >= audioFiles.length) return;
+    if (i >= audiofiles.length) return;
   };
 }
 
 // we start preloading all the audio files
-for (var i in audioFiles) {
-  preloadAudio(audioFiles[i]);
+for (var i in audiofiles) {
+  preloadAudio(audiofiles[i]);
 }
 
 // randomColor by David Merfield under the CC0 license
