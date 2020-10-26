@@ -1,6 +1,8 @@
 # Learn the alphabet
 
-A simple website to help children learn the alphabet!
+A simple website to help children learn the alphabet
+
+![](https://www.dropbox.com/s/lfaomjsjlwns5uz/Screenshot%202020-10-26%20132141.png?dl=1)
 
 [abc.olliepalmer.com](https://abc.olliepalmer.com)
 
