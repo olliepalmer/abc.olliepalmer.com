@@ -1,11 +1,29 @@
 var pos = 0;
 var letter = [];
 var audiofiles = [];
+var advance = false;
 var i = 65;
 var j = 91;
 for (k = i; k < j; k++) {
   letter[k - i] = String.fromCharCode(k);
   audiofiles[k - i] = "audio/" + String.fromCharCode(k + 32) + ".mp3";
+}
+
+function autoplay() {
+	advance = !advance;
+  var pl = document.getElementById("play-play");
+  var pa = document.getElementById("play-pause");
+	if (advance) {
+    play(pos);
+    progression = setInterval(up,2000);
+    pl.style.display = "none";
+    pa.style.display = "block";
+  }
+  if (!advance) {
+    clearInterval(progression);
+    pl.style.display = "block";
+    pa.style.display = "none";
+  }
 }
 
 function r() {
@@ -72,8 +90,6 @@ function init() {
     i++;
     if (i >= audiofiles.length) return;
   };
-  player.play(pos);
-  color();
 }
 
 // we start preloading all the audio files

@@ -50,16 +50,29 @@ a {
   margin: 0;
 }
 
-.top-bar {
-  grid-column-start: 22;
-  grid-column-end: 27;
-  grid-row-start:1;
+.button {
   justify-content: center;
   align-items: center;
   display: flex;
   text-transform: none;
   font-size: 12px;
-  opacity:1;
+  opacity:0.5;
+  transition: all 200ms;
+}
+
+.shuffle {
+  grid-row-start:1;
+  grid-column-start: 10;
+  grid-column-end: 13;
+}
+.play {
+  grid-row-start:1;
+  grid-column-start: 15;
+  grid-column-end: 18;
+}
+
+.button:hover, .button:active {
+  opacity: 1;
 }
 
 .main-section {
@@ -119,4 +132,10 @@ a {
 .left {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
+}
+
+#play-pause {
+  display: none;
+}
+#play-play {
 }
