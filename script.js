@@ -43,8 +43,8 @@ for (i = 0; i < letter.length; i++) {
   audiofiles[i] = "https://abc.olliepalmer.com/audio/" + letter[i] + ".mp3";
 }
 window.autoadvance = false;
-window.progression = setInterval(up,999999);
-
+window.progression = setInterval(up,1000);
+stop();
 function startstop() {
   window.autoadvance = !window.autoadvance;
 }

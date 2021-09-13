@@ -8,66 +8,66 @@
   <meta name="description" content="A simple site to learn the alphabet, made for Ada with ❤ by Ollie Palmer" />
 </head>
 
-<body onload='stop();change(0)'>
+<body>
   <!-- partial:index.partial.html -->
-  <div class="grid" id="bgd">
-    <div class="button shuffle" onclick='r()'><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 480 431">
-          <defs>
-            <style>
-              #arrow {
-                fill: white;
-              }
+    <div class="grid" id="bgd">
+      <div class="button shuffle" onclick='r()'><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 480 431">
+            <defs>
+              <style>
+                #arrow {
+                  fill: white;
+                }
 
-              .lineup {
-                fill: none;
-                stroke: white;
-                stroke-miterlimit: 10;
-                stroke-width: 48px;
-              }
+                .lineup {
+                  fill: none;
+                  stroke: white;
+                  stroke-miterlimit: 10;
+                  stroke-width: 48px;
+                }
 
-              .linedown {
-                fill: none;
-                stroke: white;
-                stroke-miterlimit: 10;
-                stroke-width: 48px;
-              }
-            </style>
-          </defs>
-          <g id="up">
-            <path d="M32,384h96c128,0,128-256,256-256h52.25" transform="translate(-32 -40.531)" class="lineup" />
-          </g>
-          <g id="down">
-            <path id="linedown-1" d="M32,128h96c44.9,0,74,31.4,98.4,72.3" transform="translate(-32 -40.531)" class="linedown" />
-            <path id="linedown-2" d="M286.6,313.5C310.9,353.5,339.8,384,384,384h52.3" transform="translate(-32 -40.531)" class="linedown" />
-          </g>
-          <g id="arrow">
-            <polygon points="392.553 0 392.553 174.938 480 87.469 392.553 0" />
-            <polygon points="392.553 256 392.553 430.938 480 343.469 392.553 256" />
-          </g>
+                .linedown {
+                  fill: none;
+                  stroke: white;
+                  stroke-miterlimit: 10;
+                  stroke-width: 48px;
+                }
+              </style>
+            </defs>
+            <g id="up">
+              <path d="M32,384h96c128,0,128-256,256-256h52.25" transform="translate(-32 -40.531)" class="lineup" />
+            </g>
+            <g id="down">
+              <path id="linedown-1" d="M32,128h96c44.9,0,74,31.4,98.4,72.3" transform="translate(-32 -40.531)" class="linedown" />
+              <path id="linedown-2" d="M286.6,313.5C310.9,353.5,339.8,384,384,384h52.3" transform="translate(-32 -40.531)" class="linedown" />
+            </g>
+            <g id="arrow">
+              <polygon points="392.553 0 392.553 174.938 480 87.469 392.553 0" />
+              <polygon points="392.553 256 392.553 430.938 480 343.469 392.553 256" />
+            </g>
+          </svg>
+      </div>
+
+
+
+      <div class="button play">
+        <svg id="play-play" width="50" height="50" onclick="start()" viewBox="0 0 60 60">
+          <polygon points="0,0 50,30 0,60" style="fill:white" />
         </svg>
+        <svg id="play-pause" width="50" height="50" onclick="stop()" viewBox="0 0 60 60">
+          <polygon points="0,0 15,0 15,60 0,60" style="fill:white" />
+          <polygon points="25,0 40,0 40,60 25,60" style="fill:white"/>
+        </svg>
+      </div>
+
+      <div class="button column prev" onclick='stop();down()'><i class="arrow left"></i></div>
+      <div class="main-section" id="letters">A</div>
+      <div class="button column next" onclick='stop();up()'><i class="arrow right"></i></div>
+      <div class="column credits">
+        <p>Made for Ada with ❤ by <a href="https://olliepalmer.com">Ollie Palmer</a></p>
+      </div>
     </div>
-
-
-
-    <div class="button play">
-      <svg id="play-play" width="50" height="50" onclick="start()" viewBox="0 0 60 60">
-        <polygon points="0,0 50,30 0,60" style="fill:white" />
-      </svg>
-      <svg id="play-pause" width="50" height="50" onclick="stop()" viewBox="0 0 60 60">
-        <polygon points="0,0 15,0 15,60 0,60" style="fill:white" />
-        <polygon points="25,0 40,0 40,60 25,60" style="fill:white" />
-      </svg>
-    </div>
-
-    <div class="button column prev" onclick='stop();down()'><i class="arrow left"></i></div>
-    <div class="main-section" id="letters"><a onclick='bigorsmall()'>A</a></div>
-    <div class="button column next" onclick='stop();up()'><i class="arrow right"></i></div>
-    <div class="column credits">
-      <p>Made for Ada with ❤ by <a href="https://olliepalmer.com">Ollie Palmer</a></p>
-    </div>
-  </div>
-  <!-- partial -->
-  <audio id="player"></audio>
+    <!-- partial -->
+    <audio id="player" onload='change(0)'></audio>
   <script src="./script.js"></script>
 
 </body>
