@@ -49,16 +49,16 @@
 
 
 
-      <div class="button play">
-        <svg id="play-play" width="50" height="50" onclick="start()" viewBox="0 0 60 60">
+      <div class="button play" onclick="startstop()">
+        <svg id="play-play" width="50" height="50" viewBox="0 0 60 60">
           <polygon points="0,0 50,30 0,60" style="fill:white" />
         </svg>
-        <svg id="play-pause" width="50" height="50" onclick="stop()" viewBox="0 0 60 60">
+        <svg id="play-pause" width="50" height="50" viewBox="0 0 60 60">
           <polygon points="0,0 15,0 15,60 0,60" style="fill:white" />
           <polygon points="25,0 40,0 40,60 25,60" style="fill:white"/>
         </svg>
       </div>
-
+      
       <div class="button column prev" onclick='stop();down()'><i class="arrow left"></i></div>
       <div class="main-section" id="letters">A</div>
       <div class="button column next" onclick='stop();up()'><i class="arrow right"></i></div>

@@ -47,6 +47,8 @@ window.progression = setInterval(up,1000);
 stop();
 function startstop() {
   window.autoadvance = !window.autoadvance;
+  if (window.autoadvance) start();
+  else stop();
 }
 
 function start() {
