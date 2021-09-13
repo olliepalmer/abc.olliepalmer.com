@@ -1,26 +1,71 @@
 var pos = 0;
-var letter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9'];
+var letter = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9"
+];
 var audiofiles = [];
 var advance = false;
 for (i = 0; i < letter.length; i++) {
   audiofiles[i] = "https://abc.olliepalmer.com/audio/" + letter[i] + ".mp3";
 }
+window.autoadvance = false;
+window.progression = setInterval(up,1000)
 
-function autoplay() {
-	advance = !advance;
+function startstop() {
+  window.autoadvance = !window.autoadvance;
+}
+
+function start() {
+  play(pos);
+  window.autoadvance = true;
   var pl = document.getElementById("play-play");
   var pa = document.getElementById("play-pause");
-	if (advance) {
-    play(pos);
-    progression = setInterval(up,3000);
-    pl.style.display = "none";
-    pa.style.display = "block";
-  }
-  if (!advance) {
-    clearInterval(progression);
-    pl.style.display = "block";
-    pa.style.display = "none";
-  }
+  pl.style.display = "none";
+  pa.style.display = "block";
+  window.progression = setInterval(up, 2500);
+}
+
+function stop() {
+  window.autoadvance = false;
+  var pl = document.getElementById("play-play");
+  var pa = document.getElementById("play-pause");
+  pl.style.display = "block";
+  pa.style.display = "none";
+  clearInterval(window.progression);
 }
 
 function r() {
@@ -32,11 +77,13 @@ function up() {
   if (pos >= letter.length) pos = 0;
   change(pos);
 }
+
 function down() {
   pos--;
-  if (pos < 0) pos = letter.length-1;
+  if (pos < 0) pos = letter.length - 1;
   change(pos);
 }
+
 function change(v) {
   pos = v;
   document.getElementById("letters").innerHTML =
