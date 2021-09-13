@@ -8,7 +8,7 @@
   <meta name="description" content="A simple site to learn the alphabet, made for Ada with ❤ by Ollie Palmer" />
 </head>
 
-<body onload='change(0);stop()'>
+<body onload='stop();change(0)'>
   <!-- partial:index.partial.html -->
   <div class="grid" id="bgd">
     <div class="button shuffle" onclick='r()'><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 480 431">
@@ -47,7 +47,6 @@
         </svg>
     </div>
 
-      <audio id="player"></audio>
 
 
     <div class="button play">
@@ -68,8 +67,11 @@
     </div>
   </div>
   <!-- partial -->
+  <audio id="player"></audio>
   <script src="./script.js"></script>
+
 </body>
+
 
 
 </html>
