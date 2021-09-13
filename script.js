@@ -1,12 +1,9 @@
 var pos = 0;
-var letter = [];
+var letter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9'];
 var audiofiles = [];
 var advance = false;
-var i = 65;
-var j = 91;
-for (k = i; k < j; k++) {
-  letter[k - i] = String.fromCharCode(k);
-  audiofiles[k - i] = "audio/" + String.fromCharCode(k + 32) + ".mp3";
+for (i = 0; i < letter.length; i++) {
+  audiofiles[i] = "https://abc.olliepalmer.com/audio/" + letter[i] + ".mp3";
 }
 
 function autoplay() {
@@ -15,7 +12,7 @@ function autoplay() {
   var pa = document.getElementById("play-pause");
 	if (advance) {
     play(pos);
-    progression = setInterval(up,2000);
+    progression = setInterval(up,3000);
     pl.style.display = "none";
     pa.style.display = "block";
   }
@@ -27,17 +24,17 @@ function autoplay() {
 }
 
 function r() {
-  change(Math.floor(Math.random() * 26));
+  change(Math.floor(Math.random() * letter.length));
 }
 
 function up() {
   pos++;
-  if (pos >= 26) pos = 0;
+  if (pos >= letter.length) pos = 0;
   change(pos);
 }
 function down() {
   pos--;
-  if (pos < 0) pos = 25;
+  if (pos < 0) pos = letter.length-1;
   change(pos);
 }
 function change(v) {
@@ -54,7 +51,7 @@ function color() {
 }
 function bigorsmall() {
   var element = document.getElementById("bgd");
-  element.classList.toggle("lower");
+  element.classList.toggle("upper");
 }
 
 function preloadAudio(url) {

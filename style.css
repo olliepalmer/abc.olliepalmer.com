@@ -87,8 +87,8 @@ a {
   font-size: 60vh;
 }
 
-.lower {
-  text-transform: lowercase;
+.upper {
+  text-transform: uppercase;
 }
 
 .prev {
